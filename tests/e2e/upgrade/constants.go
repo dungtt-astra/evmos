@@ -3,7 +3,7 @@ package upgrade
 // The constants used in the upgrade tests are defined here
 const (
 	// the defaultChainID used for testing
-	defaultChainID = "evmos_9000-1"
+	defaultChainID = "astra_11115-1"
 
 	// LocalVersionTag defines the docker image ImageTag when building locally
 	LocalVersionTag = "latest"

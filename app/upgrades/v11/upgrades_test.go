@@ -152,7 +152,7 @@ func (suite *UpgradeTestSuite) TestMigrateEscrowAcc() {
 
 func (suite *UpgradeTestSuite) TestDistributeRewards() {
 	// define constants
-	mainnetChainID := utils.MainnetChainID + "-4"
+	mainnetChainID := utils.MainnetChainID + "-1"
 	communityPool := sdk.MustAccAddressFromBech32("evmos1jv65s3grqf6v6jl3dp4t6c9t9rk99cd8974jnh")
 	fundingAcc := sdk.MustAccAddressFromBech32(v11.FundingAccount)
 

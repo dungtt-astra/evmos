@@ -17,6 +17,7 @@ package types
 
 import (
 	"fmt"
+	"log"
 	"math/big"
 	"regexp"
 	"strings"
@@ -50,12 +51,15 @@ func IsValidChainID(chainID string) bool {
 // ParseChainID parses a string chain identifier's epoch to an Ethereum-compatible
 // chain-id in *big.Int format. The function returns an error if the chain-id has an invalid format
 func ParseChainID(chainID string) (*big.Int, error) {
+	log.Println("CHAIN ID %v", chainID)
 	chainID = strings.TrimSpace(chainID)
+	log.Println("CHAIN ID %v", chainID)
 	if len(chainID) > 48 {
 		return nil, errorsmod.Wrapf(ErrInvalidChainID, "chain-id '%s' cannot exceed 48 chars", chainID)
 	}
 
 	matches := evmosChainID.FindStringSubmatch(chainID)
+	log.Println("CHAIN ID matches %v", matches)
 	if matches == nil || len(matches) != 4 || matches[1] == "" {
 		return nil, errorsmod.Wrapf(ErrInvalidChainID, "%s: %v", chainID, matches)
 	}

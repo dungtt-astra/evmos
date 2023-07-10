@@ -47,7 +47,7 @@ func MigrateStore(
 	cdc.MustUnmarshal(extraEIPsBz, &extraEIPs)
 
 	// revert ExtraEIP change for Evmos testnet
-	if ctx.ChainID() == "evmos_9000-4" {
+	if ctx.ChainID() == "astra_11115-1" {
 		extraEIPs.EIPs = []int64{}
 	}
 

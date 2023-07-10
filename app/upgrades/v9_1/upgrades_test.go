@@ -88,7 +88,7 @@ func (suite *UpgradeTestSuite) TestMigrateFaucetBalance() {
 	}{
 		{
 			"Mainnet - success",
-			utils.MainnetChainID + "-4",
+			utils.MainnetChainID + "-1",
 			func() {
 				// send funds to the community pool
 				priv, err := ethsecp256k1.GenerateKey()
@@ -111,7 +111,7 @@ func (suite *UpgradeTestSuite) TestMigrateFaucetBalance() {
 		},
 		{ //nolint:dupl
 			"Mainnet - first account > MaxRecover",
-			utils.MainnetChainID + "-4",
+			utils.MainnetChainID + "-1",
 			func() {
 				// send funds to the community pool
 				priv, err := ethsecp256k1.GenerateKey()
@@ -136,7 +136,7 @@ func (suite *UpgradeTestSuite) TestMigrateFaucetBalance() {
 		},
 		{ //nolint:dupl
 			"Mainnet - middle account > MaxRecover",
-			utils.MainnetChainID + "-4",
+			utils.MainnetChainID + "-1",
 			func() {
 				// send funds to the community pool
 				priv, err := ethsecp256k1.GenerateKey()
@@ -161,7 +161,7 @@ func (suite *UpgradeTestSuite) TestMigrateFaucetBalance() {
 		},
 		{
 			"Mainnet - fail communityFund is empty",
-			utils.MainnetChainID + "-4",
+			utils.MainnetChainID + "-1",
 			func() {
 			},
 			false,

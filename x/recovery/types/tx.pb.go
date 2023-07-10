@@ -5,9 +5,9 @@ package types
 
 import (
 	context "context"
-	fmt "fmt"
-	io "io"
-	math "math"
+	"fmt"
+	"io"
+	"math"
 	math_bits "math/bits"
 
 	_ "github.com/cosmos/cosmos-proto"
