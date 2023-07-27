@@ -75,7 +75,7 @@ func (suite *KeeperTestSuite) DoSetupTest(t require.TestingT) {
 	// init app
 	suite.app = app.Setup(false, feemarkettypes.DefaultGenesisState())
 	header := testutil.NewHeader(
-		1, time.Now().UTC(), "astra_11110-1", consAddress, nil, nil,
+		1, time.Now().UTC(), "astra_11115-1", consAddress, nil, nil,
 	)
 	suite.ctx = suite.app.BaseApp.NewContext(false, header)
 
