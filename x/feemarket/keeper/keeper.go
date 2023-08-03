@@ -45,11 +45,17 @@ type Keeper struct {
 
 // NewKeeper generates new fee market module keeper
 func NewKeeper(
-	cdc codec.BinaryCodec, authority sdk.AccAddress, storeKey, transientKey storetypes.StoreKey, ss paramstypes.Subspace,
+	cdc codec.BinaryCodec, authority sdk.AccAddress, storeKey, transientKey storetypes.StoreKey,
+	ss paramstypes.Subspace,
 ) Keeper {
 	// ensure authority account is correctly formatted
 	if err := sdk.VerifyAddressFormat(authority); err != nil {
 		panic(err)
+	}
+
+	// set KeyTable if it has not already been set
+	if !ss.HasKeyTable() {
+		ss = ss.WithKeyTable(types.ParamKeyTable())
 	}
 
 	return Keeper{
